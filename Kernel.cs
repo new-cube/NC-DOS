@@ -7,9 +7,18 @@ namespace NC_DOS
 {
     public class Kernel : Sys.Kernel
     {
+        void clearScreen()
+        {
+            for(var i = 0; i <= 22; i++)
+            {
+                Console.WriteLine(" "); // Clears screen
+            }
+        }
         protected override void BeforeRun()
         {
+            clearScreen();
             Console.WriteLine("NC-DOS 1.0.0");
+            clearScreen();
         }
 
         protected override void Run()
@@ -23,6 +32,7 @@ namespace NC_DOS
 
             if (input == "helloworld")
             {
+                clearScreen();
                 Console.WriteLine("Hello world!");
 
             }
