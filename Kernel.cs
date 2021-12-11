@@ -30,6 +30,7 @@ namespace NC_DOS
 
             }
 
+
             if (input == "helloworld")
             {
                 clearScreen();
@@ -41,8 +42,8 @@ namespace NC_DOS
             {
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
+               // Console.WriteLine("restart: VERY self explainatory");
 
             }
-        }
     }
 }
