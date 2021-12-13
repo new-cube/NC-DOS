@@ -26,7 +26,7 @@ namespace NC_DOS
             var input = Console.ReadLine();
             if (input == "about")
             {
-                Console.WriteLine("NC-DOS 1.0.0 (C) 2021 EnZon3 (Made with Cosmos (This isn't a watermark I just put this here.))");
+                Console.WriteLine("NC-DOS 1.0.0 (C) 2021 EnZon3");
 
             }
 
