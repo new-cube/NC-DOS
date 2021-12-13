@@ -42,8 +42,14 @@ namespace NC_DOS
             {
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
-               // Console.WriteLine("restart: VERY self explainatory");
 
             }
+            if (input == "charset")
+            {
+                Console.WriteLine("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()~`-_=+[{]}\|:;'"",<.>?/\n");
+                Console.WriteLine("The quick brown fox jumps over the lazy dog");
+
+            }
+        }
     }
 }
