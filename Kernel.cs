@@ -46,7 +46,7 @@ namespace NC_DOS
             }
             if (input == "charset")
             {
-                Console.WriteLine("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()~`-_=+[{]}\|:;'"",<.>?/\n");
+                Console.WriteLine("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()~`-_=+[{]}|:;',<.>?/");
                 Console.WriteLine("The quick brown fox jumps over the lazy dog");
 
             }
