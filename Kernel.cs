@@ -31,25 +31,34 @@ namespace NC_DOS
 
             }
             
-            string textEditor()
+
+            string textEditor(string save)
             {
                 bool inTextEditor = true;
-                int x = 1;
-                string[] textToSave = {"/",};
-                string savedText = "No text";
+                string savedText = "/";
+               // int x = 1;
+               // string[] textToSave = {"/",};
+               // string savedText = "No text";
+               if (save != "/")
+                {
+                    Console.WriteLine(save);
+                }
                 while (inTextEditor == true)
                 {
+                    /*
                     textToSave[x] = input;
                     x++;
+                    */
                     if (input == "t-exit")
                     {
                         inTextEditor = false;
+                        savedText = input + "/";
                     }
+                    return savedText;
                 }
-                savedText = string.Join("", textToSave);
+                // savedText = string.Join("", textToSave);
                 return savedText;
-            }
-
+            }  
             if (input == "helloworld")
             {
                 clearScreen();
@@ -84,16 +93,23 @@ namespace NC_DOS
                 Console.WriteLine("|    textedit, tempfile, guessgame                                        |");
                 Console.WriteLine("|  How to open program: --open [program name]                             |");
                 Console.WriteLine("+-------------------------------------------------------------------------+");
-                
                 while (exit = false)
                 {
                     string[] ProccessedInput = input.ToLower().Split(' ');
+                    string text = "/";
 
                     if (ProccessedInput[0] == "--open")
                     {
                         if (ProccessedInput[1] == "textedit")
                         {
-                            string text = textEditor();
+                            text = textEditor("/");
+                        }
+                    }
+                    if (ProccessedInput[0] == "--reopen")
+                    {
+                        if (ProccessedInput[1] == "textedit")
+                        {
+                            string text2 = textEditor(text);
                         }
                     }
                     if (ProccessedInput[0] == "--exit")
@@ -101,7 +117,6 @@ namespace NC_DOS
                             exit = true;
                         }
                 }
-
             }
         }
     }
