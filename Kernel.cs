@@ -31,7 +31,7 @@ namespace NC_DOS
 
             }
             
-
+            /*
             string textEditor(string save)
             {
                 bool inTextEditor = true;
@@ -48,7 +48,7 @@ namespace NC_DOS
                     /*
                     textToSave[x] = input;
                     x++;
-                    */
+                    
                     if (input == "t-exit")
                     {
                         inTextEditor = false;
@@ -59,6 +59,7 @@ namespace NC_DOS
                 // savedText = string.Join("", textToSave);
                 return savedText;
             }  
+            */
             if (input == "helloworld")
             {
                 clearScreen();
@@ -71,6 +72,7 @@ namespace NC_DOS
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
                 Console.WriteLine("charset: Displays every typeable charater (except the ones that can't go in quotation marks.)");
+                Console.WriteLine("manager: Opens Program Manager");
 
             }
             if (input == "charset")
@@ -93,29 +95,76 @@ namespace NC_DOS
                 Console.WriteLine("|    textedit, tempfile, guessgame                                        |");
                 Console.WriteLine("|  How to open program: --open [program name]                             |");
                 Console.WriteLine("+-------------------------------------------------------------------------+");
-                while (exit = false)
+                while (exit == false)
                 {
-                    string[] ProccessedInput = input.ToLower().Split(' ');
-                    string text = "/";
+                    var managerInput = Console.ReadLine();
+                    string[] ProccessedInput = managerInput.ToLower().Split(' ');
+                    string[] savedValue;
+                    savedValue[0] "/";
+                   // string text = "/";
 
                     if (ProccessedInput[0] == "--open")
                     {
                         if (ProccessedInput[1] == "textedit")
                         {
-                            text = textEditor("/");
+                           // TODO: Multi-Line support
+                           // text = textEditor("/");
+                           bool inEditor = true;
+                           Console.WriteLine("TextEdit v1.0");
+                           int counter = 1;
+                           while (inEditor == true)
+                            {
+                                var input2 = Console.ReadLine();
+                                if (input2 == "t-exit")
+                                {
+                                    inEditor = false;
+                                    Console.WriteLine("While Loop gone!");
+                                    savedValue[0] = counter;
+                                } else
+                                {
+                                    savedValue[counter] = input2;
+                                    counter++;
+                                }
                         }
                     }
-                    if (ProccessedInput[0] == "--reopen")
+                    if (ProccessedInput[0] == "--resume")
                     {
                         if (ProccessedInput[1] == "textedit")
                         {
-                            string text2 = textEditor(text);
+                           // string text2 = textEditor(text);
+                           int counter = 1;
+                           if (savedValue[0] == "/")
+                           {
+                                Console.WriteLine("TextEdit is not open!");
+                           }
+                           if (savedValue[0] != "/")
+                           {
+                               // var tempString = savedValue;
+                               for (int i = 0; i <= savedValue[0])
+                                    {
+                                        counter = savedValue[0] + 1;
+                                        Console.WriteLine(savedValue[i]);
+                                        var input2 = Console.ReadLine();
+                                        if (input2 == "t-exit")
+                                        {
+                                            inEditor = false;
+                                            Console.WriteLine("While Loop gone!");
+                                            savedValue[0] = counter;
+                                        } else
+                                        {
+                                            savedValue[counter] = input2;
+                                            counter++;
+                                        }
+
+                                    }
+                           }
                         }
                     }
-                    if (ProccessedInput[0] == "--exit")
-                        {
-                            exit = true;
-                        }
+                        if (ProccessedInput[0] == "--exit")
+                            {
+                                exit = true;
+                            }
+                    }
                 }
             }
         }
