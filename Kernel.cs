@@ -99,8 +99,8 @@ namespace NC_DOS
                 {
                     var managerInput = Console.ReadLine();
                     string[] ProccessedInput = managerInput.ToLower().Split(' ');
-                    string[] savedValue;
-                    savedValue[0] = "/";
+                    string[] savedValue = {"/"};
+                    int lines = 1;
                    // string text = "/";
 
                     if (ProccessedInput[0] == "--open")
@@ -119,10 +119,11 @@ namespace NC_DOS
                                 {
                                     inEditor = false;
                                     Console.WriteLine("While Loop gone!");
-                                    savedValue[0] = counter;
+                                    lines = counter;
                                 } else
                                 {
                                     savedValue[counter] = input2;
+                                    savedValue[0] = " ";
                                     counter++;
                                 }
                         }
@@ -140,23 +141,25 @@ namespace NC_DOS
                            if (savedValue[0] != "/")
                            {
                                // var tempString = savedValue;
-                               for (int i = 0; i <= savedValue[0]; i++)
+                               bool inEditor = true;
+                               counter = lines + 1;
+                               for (int i = 0; i <= lines; i++)
                                     {
-                                        counter = savedValue[0] + 1;
+                                        counter = lines + 1;
                                         Console.WriteLine(savedValue[i]);
-                                        var input2 = Console.ReadLine();
-                                        if (input2 == "t-exit")
-                                        {
-                                            inEditor = false;
-                                            Console.WriteLine("While Loop gone!");
-                                            savedValue[0] = counter;
-                                        } else
-                                        {
-                                            savedValue[counter] = input2;
-                                            counter++;
-                                        }
 
                                     }
+                               var input2 = Console.ReadLine();
+                               if (input2 == "t-exit")
+                               {
+                               inEditor = false;
+                               Console.WriteLine("While Loop gone!");
+                               savedValue[0] = " ";
+                               } else
+                               {
+                                    savedValue[counter] = input2;
+                                    counter++;
+                               }
                            }
                         }
                     }
