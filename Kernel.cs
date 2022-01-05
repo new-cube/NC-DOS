@@ -100,7 +100,7 @@ namespace NC_DOS
                     var managerInput = Console.ReadLine();
                     string[] ProccessedInput = managerInput.ToLower().Split(' ');
                     string[] savedValue;
-                    savedValue[0] "/";
+                    savedValue[0] = "/";
                    // string text = "/";
 
                     if (ProccessedInput[0] == "--open")
@@ -140,7 +140,7 @@ namespace NC_DOS
                            if (savedValue[0] != "/")
                            {
                                // var tempString = savedValue;
-                               for (int i = 0; i <= savedValue[0])
+                               for (int i = 0; i <= savedValue[0]; i++)
                                     {
                                         counter = savedValue[0] + 1;
                                         Console.WriteLine(savedValue[i]);
