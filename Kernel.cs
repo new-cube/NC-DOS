@@ -42,6 +42,8 @@ namespace NC_DOS
             {
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
+                Console.WriteLine("mangager: Opens Program Manager.");
+                Console.WriteLine("charset: Displays every typable character (that can fit in quotes without causing an error)");
 
             }
             if (input == "charset")
@@ -57,7 +59,7 @@ namespace NC_DOS
                 Console.WriteLine("|   Program Manager  v1.0                                                 |");
                 Console.WriteLine("--------------------------------------------------------------------------|");
                 Console.WriteLine("|  How does this work?                                                    |");
-                Console.WriteLine("|  	Well, The data for each built in program is saved to memory and      |");
+                Console.WriteLine("|  	Well, The data for each built in program is saved to memory and   |");
                 Console.WriteLine("|  when you do the command: --resume [program] , the program you were usi |");
                 Console.WriteLine("|  ng gets saved and the other program gets loaded again.                 |");
                 Console.WriteLine("|  Programs:                                                              |");
@@ -90,10 +92,11 @@ namespace NC_DOS
                                     inEditor = false;
                                     Console.WriteLine("While Loop gone!");
                                     lines = counter;
-                                } else
+                                }
+                                if (input2 != "t-exit")
                                 {
                                     savedValue[counter] = input2;
-                                    savedValue[0] = "/.";
+                                    savedValue[0] = "ok";
                                     counter++;
                                 }
                         }
@@ -108,17 +111,16 @@ namespace NC_DOS
                            {
                                 Console.WriteLine("TextEdit is not open!");
                            }
-                           if (savedValue[0] != "/")
+                           if (savedValue[0] == "ok")
                            {
                                // var tempString = savedValue;
                                bool inEditor = true;
                                counter = lines + 1;
                                for (int i = 0; i <= lines; i++)
-                                    {
-                                        counter = lines + 1;
-                                        Console.WriteLine(savedValue[i]);
+                               {
+                                        Console.WriteLine(savedValue[i].ToString());
 
-                                    }
+                               }
                                var input2 = Console.ReadLine();
                                if (input2 == "t-exit")
                                {
