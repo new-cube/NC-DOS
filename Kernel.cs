@@ -14,6 +14,7 @@ namespace NC_DOS
                 Console.WriteLine(" "); // Clears screen
             }
         }
+
         protected override void BeforeRun()
         {
             clearScreen();
@@ -29,12 +30,40 @@ namespace NC_DOS
                 Console.WriteLine("NC-DOS 1.0.0 (C) 2021 EnZon3");
 
             }
-
-
+            
+            /*
+            string textEditor(string save)
+            {
+                bool inTextEditor = true;
+                string savedText = "/";
+               // int x = 1;
+               // string[] textToSave = {"/",};
+               // string savedText = "No text";
+               if (save != "/")
+                {
+                    Console.WriteLine(save);
+                }
+                while (inTextEditor == true)
+                {
+                    /*
+                    textToSave[x] = input;
+                    x++;
+                    
+                    if (input == "t-exit")
+                    {
+                        inTextEditor = false;
+                        savedText = input + "/";
+                    }
+                    return savedText;
+                }
+                // savedText = string.Join("", textToSave);
+                return savedText;
+            }  
+            */
             if (input == "helloworld")
             {
                 clearScreen();
-                Console.WriteLine("Hello world!");
+                Console.WriteLine("Hello World!");
 
             }
 
@@ -42,8 +71,6 @@ namespace NC_DOS
             {
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
-                Console.WriteLine("mangager: Opens Program Manager.");
-                Console.WriteLine("charset: Displays every typable character (that can fit in quotes without causing an error)");
 
             }
             if (input == "charset")
