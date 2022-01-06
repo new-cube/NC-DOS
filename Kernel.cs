@@ -143,9 +143,9 @@ namespace NC_DOS
                                // var tempString = savedValue;
                                bool inEditor = true;
                                counter = lines + 1;
-                               for (int i = 0; i <= lines; i++)
+                               for (int b = 0; b <= lines; b++)
                                {
-                                        Console.WriteLine(savedValue[i].ToString());
+                                        Console.WriteLine(savedValue[b].ToString());
 
                                }
                                var input2 = Console.ReadLine();
