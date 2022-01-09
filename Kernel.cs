@@ -148,15 +148,15 @@ namespace NC_DOS
                                         Console.WriteLine(savedValue[b].ToString());
 
                                }
-                               var input2 = Console.ReadLine();
-                               if (input2 == "t-exit")
+                               var input3 = Console.ReadLine();
+                               if (input3 == "t-exit")
                                {
                                inEditor = false;
                                Console.WriteLine("While Loop gone!");
                                savedValue[0] = " ";
                                } else
                                {
-                                    savedValue[counter] = input2;
+                                    savedValue[counter] = input3;
                                     counter++;
                                }
                            }
