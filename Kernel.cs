@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Sys = Cosmos.System;
+using bugcheck;
 
 namespace NC_DOS
 {
@@ -30,6 +31,8 @@ namespace NC_DOS
                 Console.WriteLine("NC-DOS 1.0.0 (C) 2021 EnZon3");
 
             }
+            
+            //BugChk bChk = new BugChk();
             
             /*
             string textEditor(string save)
@@ -78,6 +81,18 @@ namespace NC_DOS
                 Console.WriteLine("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()~`-_=+[{]}|:;',<.>?/");
                 Console.WriteLine("The quick brown fox jumps over the lazy dog");
 
+            }
+            if (input == "crash")
+            {
+                try
+                {
+                    throw new Exception();
+                }
+                catch (Exception) 
+                {
+                    Console.WriteLine("crashed");
+                    BugChk.BgChk("TestException", "No info");
+                }
             }
             if (input == "manager")
             {
