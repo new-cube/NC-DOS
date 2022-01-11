@@ -74,6 +74,8 @@ namespace NC_DOS
             {
                 Console.WriteLine("about: Self-explainatory tbh");
                 Console.WriteLine("helloworld: Also self-explainatory");
+                Console.WriteLine("charset: Every printable character that did not cause an error.");
+                Console.WriteLine("crash: Crashes the OS.");
 
             }
             if (input == "charset")
