@@ -91,7 +91,7 @@ namespace NC_DOS
                 catch (Exception) 
                 {
                     Console.WriteLine("crashed");
-                    BugChk.BgChk("TestException", "No info");
+                    BugChk.BgChk("Exception", "No info");
                 }
             }
             if (input == "manager")
