@@ -166,7 +166,7 @@ namespace NC_DOS
                     {
                         try
                         {
-                            Sys.FileSystem.VFS.VFSManager.CreateFile(@"0:\hello_from_elia.txt");
+                            Sys.FileSystem.VFS.VFSManager.CreateFile(@ProccessedInput2[1]);
                         }
                         catch (Exception e)
                         {
