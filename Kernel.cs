@@ -124,7 +124,7 @@ namespace NC_DOS
                 while (true)
                 {
                     var fcIn = Console.ReadLine();
-                    string[] ProccessedInput2 = fcIn.ToLower().Split(' ');
+                    string[] ProccessedInput2 = fcIn.Split(' ');
                     if (ProccessedInput2[0] == "+open")
                     {
                         try
